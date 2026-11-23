@@ -175,7 +175,7 @@
 
       <path class="env" d={circle(RIN - 6)} />
       <text class="c1" y="-8" fill={hueOf(sel)}>{sel.label}</text>
-      <text class="c2" y="10">{sel.onset == null ? 'no clear start' : `began ${short(weekEnd(sel, sel.onset))}`}</text>
+      <text class="c2" y="10">{sel.onset == null ? 'no clear start' : `${sel.provisional ? 'crossed' : 'began'} ${short(weekEnd(sel, sel.onset))}`}</text>
       <text class="c2" y="24">{sel.season === CUR ? 'so far' : 'peak'} {pct(sel.peak)}</text>
     </svg>
   </div>
