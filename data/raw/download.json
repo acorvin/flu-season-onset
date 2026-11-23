@@ -1,0 +1,8 @@
+{
+  "downloaded_utc": "2026-11-23T07:50:08+00:00",
+  "files": {
+    "ilinet_wili_nation.csv": "https://delphi.cmu.edu/epidata/v5/snapshot/?source=fluview_ilinet&signal=wili&geo_type=nation&limit=-1",
+    "ilinet_wili_hhs.csv": "https://delphi.cmu.edu/epidata/v5/snapshot/?source=fluview_ilinet&signal=wili&geo_type=hhs&limit=-1",
+    "ilinet_ili_state.csv": "https://delphi.cmu.edu/epidata/v5/snapshot/?source=fluview_ilinet&signal=ili&geo_type=state&limit=-1"
+  }
+}
