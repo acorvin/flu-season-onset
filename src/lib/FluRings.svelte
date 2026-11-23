@@ -117,7 +117,7 @@
 
 <div class="fr">
   <div class="stage">
-    <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+    <!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions -->
     <svg
       bind:this={svg}
       viewBox="{-ROUT - 70} {-ROUT - 70} {(ROUT + 70) * 2} {(ROUT + 70) * 2}"
