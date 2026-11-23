@@ -1,0 +1,25 @@
+{
+  "name": "flu-season-onset",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "How early each US flu season began, 1997 to 2026, drawn as a field of flu virus particles.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "svelte": "^5.57.2",
+    "vite": "^8.3.4"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}

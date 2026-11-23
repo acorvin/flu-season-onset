@@ -1,0 +1,77 @@
+/* How Early Is Flu in the US This Year? One particle, every season a ring. Tokens fall back so the piece also runs on its own. */
+.fr { --fr-ink: var(--ink, #1c1e21); --fr-muted: var(--muted, #5a5e66); --fr-faint: var(--faint, #e3e4e1); --fr-sans: var(--sans, 'Geist Variable', 'Helvetica Neue', Arial, sans-serif); --fr-mono: var(--mono, 'Geist Mono Variable', ui-monospace, Menlo, monospace); display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 330px); gap: 32px; align-items: start; max-width: 1240px; margin: 0 auto; color: var(--fr-ink); font: 400 16px/1.5 var(--fr-sans); }
+.fr *, .fr *::before, .fr *::after { box-sizing: border-box; }
+.fr :focus-visible { outline: 2px solid #3f6c96; outline-offset: 2px; }
+.fr .stage { position: sticky; top: calc(var(--header, 0px) + 12px); min-width: 0; }
+.fr .stage svg { display: block; width: 100%; max-height: calc(100vh - 40px); height: auto; overflow: visible; cursor: pointer; touch-action: pan-y; }
+.fr .stage svg:focus, .fr .stage svg:focus-visible { outline: none; }
+.fr path { fill: none; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.fr .base { stroke: #efede8; stroke-width: .5; }
+.fr .wave { stroke-width: .5; opacity: .3; }
+.fr .hot { stroke-width: 1; opacity: .95; }
+.fr .dots { stroke: none; opacity: .6; }
+.fr .spikes { stroke-width: .6; opacity: .8; }
+.fr .heads { stroke-width: .55; opacity: .85; }
+.fr .chosen .dots { opacity: .9; }
+.fr .chosen .spikes { stroke-width: 1; opacity: 1; }
+.fr .chosen .heads { stroke-width: 1; opacity: 1; }
+.fr .rest { stroke-width: .6; opacity: .4; stroke-dasharray: 1 3; }
+.fr .chosen .wave { stroke-width: 1; opacity: .9; }
+.fr .chosen .hot { stroke-width: 2; opacity: 1; }
+.fr .guide { stroke: #c06a85; stroke-width: .9; stroke-dasharray: 3 3; }
+.fr .glab { font: 400 11px var(--fr-mono); fill: #c06a85; text-anchor: start; }
+.fr .low { stroke-width: .6; opacity: .5; }
+.fr .high { stroke-width: .8; opacity: 1; }
+.fr .future { stroke-width: .6; opacity: .45; }
+.fr .all { transition: opacity .25s; }
+.fr .all.quiet { opacity: .3; }
+.fr .chosen .ring { stroke-width: .9; opacity: .8; }
+.fr .chosen .low { stroke-width: .8; opacity: .55; }
+.fr .chosen .high { stroke-width: 1.15; opacity: 1; }
+.fr .chosen .head { stroke-width: .8; }
+.fr .hand { stroke: var(--fr-ink); stroke-width: .8; opacity: .75; }
+.fr .hlab { font: 400 11px var(--fr-mono); fill: var(--fr-ink); text-anchor: start; }
+.fr .onset { stroke: var(--fr-ink); stroke-width: .6; stroke-dasharray: 1.5 2.5; opacity: .7; }
+.fr .odot { stroke-width: 1; }
+.fr .odot.on { stroke-width: 1.4; }
+.fr .env { stroke: var(--fr-faint); stroke-width: .6; }
+.fr .mtick { stroke: #cfccc3; stroke-width: .7; }
+.fr .month { font: 400 12px var(--fr-mono); fill: var(--fr-muted); text-anchor: middle; }
+.fr .ylab { font: 400 8.5px var(--fr-mono); fill: #a9a59b; text-anchor: middle; pointer-events: none; }
+.fr .ylab.on { fill: var(--fr-ink); font-size: 10px; }
+.fr .c1 { font: 300 19px var(--fr-sans); text-anchor: middle; letter-spacing: -0.01em; }
+.fr .c2 { font: 400 10.5px var(--fr-mono); fill: var(--fr-muted); text-anchor: middle; }
+
+.fr .title { margin: 0 0 10px; font: 300 clamp(36px, 4vw, 52px)/1.05 var(--fr-sans); letter-spacing: -0.03em; text-wrap: balance; }
+.fr .lede { margin: 0 0 12px; font-size: 19px; line-height: 1.38; font-weight: 300; text-wrap: pretty; }
+.fr .rule { margin: 0 0 14px; color: var(--fr-muted); text-wrap: pretty; }
+.fr .how svg { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 0 6px; }
+.fr .how .howline { stroke: #a8793a; stroke-width: 1; opacity: .75; }
+.fr .how .howbase { stroke: #e3e1da; stroke-width: .8; }
+.fr .how .howdot { fill: #a8793a; opacity: .6; }
+.fr .how .howspike, .fr .how .howhead { stroke: #a8793a; stroke-width: .9; fill: none; }
+.fr .how text { font: 400 11px var(--fr-mono); fill: var(--fr-muted); text-anchor: middle; }
+.fr .key { margin: 0 0 14px; padding: 0; list-style: none; font-size: 13.5px; color: var(--fr-muted); }
+.fr .key li { display: flex; align-items: center; gap: 8px; padding: 2px 0; }
+.fr .key i { display: block; flex: none; width: 18px; border-top: 1.5px solid; }
+.fr .key .dot { display: block; flex: none; width: 8px; height: 8px; margin: 0 5px; border: 1px solid #a8793a; border-radius: 50%; background: #fff; }
+.fr .key .dot.full { background: #a8793a; }
+.fr .finding { margin: 0 0 16px; font-size: 16px; line-height: 1.45; font-weight: 300; text-wrap: pretty; }
+.fr .pickrow { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 14px; }
+.fr .pickrow select { flex: 1; height: 36px; padding: 0 8px; border: 1px solid var(--fr-faint); border-radius: 999px; background: #fff; color: var(--fr-ink); font: 400 14px var(--fr-sans); }
+.fr .seg { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.fr .seg button { padding: 7px 13px; border: 1px solid var(--fr-faint); border-radius: 999px; background: #fff; color: var(--fr-ink); font: 400 14px var(--fr-sans); cursor: pointer; }
+.fr .seg button:hover { border-color: var(--fr-ink); }
+.fr .seg button[aria-pressed='true'] { border-color: var(--fr-ink); background: var(--fr-ink); color: #fff; }
+.fr .facts { margin-bottom: 14px; }
+.fr .facts h3 { margin: 0 0 4px; font: 300 22px/1.15 var(--fr-sans); }
+.fr .facts .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding: 5px 0; border-top: 1px solid var(--fr-faint); font-size: 14px; }
+.fr .facts .row b { font: 400 13px var(--fr-mono); text-align: right; }
+.fr .toggle { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; font-size: 14px; color: var(--fr-muted); }
+.fr .toggle input { accent-color: #c06a85; }
+.fr .src { margin: 0; font-size: 13px; color: var(--fr-muted); }
+@media (max-width: 860px) {
+  .fr { display: flex; flex-direction: column; gap: 16px; }
+  .fr .stage { position: static; }
+}
+@media (prefers-reduced-motion: reduce) { .fr .all { transition: none; } }
